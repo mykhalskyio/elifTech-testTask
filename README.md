@@ -3,7 +3,11 @@
 <img src="ui/static/go.png" width="200">
 </p>
 
-# How to run
+## Requirements
+* Git
+* Docker
+
+## How to run
 
 Clone repository
 
