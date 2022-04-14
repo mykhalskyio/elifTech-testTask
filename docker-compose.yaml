@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  app:
+    build: ./
+    command: ./app
+    depends_on:
+      - pgdb
+    ports:
+      - "25565:25565"
+    restart: always
+
+  pgdb:
+    image: "postgres:11"
+    container_name: "pgdb"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwerty123
+      - POSTGRES_DB=postgres
+    ports:
+      - "54320:5432"
+    volumes:
+      -  /home/root/ElifTech/db/data:/var/lib/postgresql/data

@@ -1,0 +1,7 @@
+postgres:
+  port: 5432
+  host: pgdb
+  user: postgres
+  pass: qwerty123
+  name: postgres
+  sslmode: disable

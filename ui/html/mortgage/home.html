@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <title>Mortage</title>
+</head>
+<body>
+    <br>
+    <div style="text-align: center;"><h1>Mortgages</h1></div>
+    <div style="text-align: center;">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Mortgages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/banks">Banks</a>
+            </li>
+          </ul>
+    </div>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">Mortage calculator</div>
+        <div class="card-body">
+          <form action="/addmortage" method="post">
+            <div class="form-group">
+              <label for="InitialLoan">Initial Loan:</label>
+              <input type="text" class="form-control" name="InitialLoan"><br>
+              <label for="DownPayment">Down Payment:</label>
+              <input type="text" class="form-control" name="DownPayment"><br>
+              <label for="BankId">Bank Id:</label>
+              <input type="text" class="form-control" name="BankId"><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Check and Add</button>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Initial Loan</th>
+                <th scope="col">Down Payment</th>
+                <th scope="col">Monthly Payment</th>
+                <th scope="col">Bank Id</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{range .Mortgages}}
+                <tr>
+                  <td>{{.Id}}</td>
+                  <td>{{.InitialLoan}}</td>
+                  <td>{{.DownPayment}}</td>
+                  <td>{{.MonthlyPayment}}</td>
+                  <td>{{.BankId}}</td>
+                  <td>
+                    <a href="/deletemortage?id={{.Id}}"><button class="btn btn-danger">Delete</button></a>
+                  </td>
+                </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
