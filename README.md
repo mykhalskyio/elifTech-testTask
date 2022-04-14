@@ -1,9 +1,9 @@
-#Test task - Mortgage calculator
+# Test task - Mortgage calculator
 <p align="right">
 <img src="ui/static/go.png" width="200">
 </p>
 
-#How to run
+# How to run
 
 Clone repository
 
@@ -17,5 +17,5 @@ Or
 
     $ docker-compose up --build app
 
-#Example
+# Example
 http://130.61.104.174:25565/
