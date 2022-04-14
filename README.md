@@ -1,5 +1,5 @@
 # Test task - Mortgage calculator
-<p align="right">
+<p align="center">
 <img src="ui/static/go.png" width="200">
 </p>
 
