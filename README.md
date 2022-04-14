@@ -7,7 +7,7 @@
 
 Clone repository
 
-    $ git clone myrepo
+    $ git clone https://github.com/mykhalskyio/elifTech-testTask.git
 
 Run make file
     
